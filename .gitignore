@@ -12,7 +12,7 @@ logs_perf
 hessian*
 datasets/cifar-10*
 datasets/tiny-imagenet*
-# fig*
+fig*
 logs*
 *.pyc
 # *.png
