@@ -12,8 +12,8 @@ simplefilter(action='ignore', category=FutureWarning)
 torch.set_num_threads(10)
 
 dir_path = os.path.dirname(__file__)
-nfs_dataset_path1 = '/nfs_dataset_path1/datasets/'
-nfs_dataset_path2 = '/nfs_dataset_path2/datasets/'
+nfs_dataset_path1 = '/nfs4-p1/ckx/datasets/'
+nfs_dataset_path2 = '/mnt/nfs4-p1/ckx/datasets/'
 
 
 def main(args):

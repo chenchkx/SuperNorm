@@ -15,12 +15,12 @@ from datasets.dgl_planetoid_dataset import DglPlanetoidDataset
 from datasets.preprocess import data_preprocess
 from warnings import simplefilter
 simplefilter(action='ignore', category=FutureWarning)
-torch.set_num_threads(25)
+
 
 dir_path = os.path.dirname(__file__)
-nfs_dataset_path1 = '/nfs_dataset_path1/datasets/'
-nfs_dataset_path2 = '/nfs_dataset_path2/datasets/'
-
+nfs_dataset_path1 = '/nfs4-p1/ckx/datasets/'
+nfs_dataset_path2 = '/mnt/nfs4-p1/ckx/datasets/'
+# torch.set_num_threads(10) 
 
 def main(args):
 
@@ -61,7 +61,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     ## datasets path and name
     parser.add_argument("--dataset_path", type=str, default='datasets')
-    parser.add_argument("--dataset_name", type=str, default='ogbg-moltoxcast')
+    parser.add_argument("--dataset_name", type=str, default='ogbl-collab')
     ## graph-level dataset
     # zinc
     # imdb-binary

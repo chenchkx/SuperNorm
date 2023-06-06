@@ -5,6 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from dgl.ops.segment import segment_reduce as sg_reduce
 from utils.utils_practice import repeat_tensor_interleave as sg_repeat
+from modules.norm.norm_node import *
 
 class SuperNorm(nn.BatchNorm1d):
     def __init__(self, num_features, edge_power=False, eps=1e-5, momentum=0.1, affine=True,
@@ -15,10 +16,12 @@ class SuperNorm(nn.BatchNorm1d):
 
         self.calibration = nn.Parameter(torch.zeros(num_features))
         self.enhancement = nn.Parameter(torch.zeros(num_features))
+        self.node_norm = node_norm()
 
     def prepare_info(self, graph, tensor): 
         nums = graph.batch_num_nodes()
-        tensor = F.normalize(tensor, dim=1) if len(nums) == 1 else tensor    
+        # tensor = F.normalize(tensor, dim=1) if len(nums) == 1 else tensor    
+        tensor = self.node_norm(tensor) if len(nums) == 1 else tensor  
         calib_factor = graph.ndata['sg_factor_norm']*graph.ndata['sg_factor'] 
         enhan_factor = calib_factor/sg_repeat(sg_reduce(nums, calib_factor, reducer='sum'), nums)
         return nums, tensor, calib_factor, enhan_factor

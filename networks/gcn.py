@@ -58,22 +58,12 @@ class GCN_Graph(nn.Module):
         self.norm_loss = torch.zeros(self.num_layer)
 
         h_list = [h_n]
-        calibration_absmean_list=[]
-        enhancement_absmean_list=[]
-        calibration_mean_list=[]
-        enhancement_mean_list=[]
+
         for layer in range(self.num_layer):
 
             # conv_layer & norm layer
             h_n = self.conv_layers[layer](graph, h_n, h_e)
-            # self.conv_feature.append(h_n)
             h_n = self.norm_layers[layer](graph, h_n)
-            # self.norm_feature.append(h_n)
-            # if 'motif' in self.args.norm_type:
-            #     calibration_absmean_list.append(self.norm_layers[layer].norm.calibration.abs().mean().detach().cpu().item())
-            #     enhancement_absmean_list.append(self.norm_layers[layer].norm.enhancement.abs().mean().detach().cpu().item())
-            #     calibration_mean_list.append(self.norm_layers[layer].norm.calibration.mean().detach().cpu().item())
-            #     enhancement_mean_list.append(self.norm_layers[layer].norm.enhancement.mean().detach().cpu().item())
             # activation and dropout
             h_n = self.activation(h_n)
             h_n = self.dropout(h_n)    

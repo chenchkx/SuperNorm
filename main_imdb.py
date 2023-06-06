@@ -120,7 +120,7 @@ if __name__=='__main__':
     parser.add_argument("--device", type=int, default=1)  
     parser.add_argument("--num_layer", type=int, default=1)
     parser.add_argument("--embed_dim", type=int, default=128) 
-    parser.add_argument("--norm_type", type=str, default='batchnorm')
+    parser.add_argument("--norm_type", type=str, default='supernorm')
     parser.add_argument("--norm_affine", type=bool, default=True)
     parser.add_argument("--activation", type=str, default='relu', choices=['relu', 'None'])
     parser.add_argument("--dropout", type=float, default=0.5)

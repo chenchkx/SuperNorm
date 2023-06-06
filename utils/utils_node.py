@@ -40,7 +40,7 @@ def load_dataset(args):
         dataset = DglPlanetoidDataset(name=args.dataset_name, root=args.dataset_path)
     split_idx = dataset.get_idx_split()
 
-    if not 'motif_factor' in dataset.graph[0].ndata.keys():
+    if not 'sg_factor' in dataset.graph[0].ndata.keys():
         dataset = data_preprocess(args, dataset)
 
     if 'ogbn-proteins' == args.dataset_name:
@@ -117,7 +117,7 @@ def load_model(args):
 ### load model optimizing and learning class
 def ModelOptLoading(model, optimizer, scheduler, args):
 
-    if args.dataset_name in ['cora', 'citeseer', 'pubmed', 'ogbn-arxiv']:
+    if args.dataset_name in ['cora', 'citeseer', 'pubmed', 'ogbn-arxiv','ogbn-products', 'ogbn-mag']:
         modelOptm = ModelOptLearning_OGBN_Acc(
                                 model=model, 
                                 optimizer=optimizer,

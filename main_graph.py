@@ -12,8 +12,8 @@ simplefilter(action='ignore', category=FutureWarning)
 torch.set_num_threads(10)
 
 dir_path = os.path.dirname(__file__)
-nfs_dataset_path1 = '/nfs_dataset_path1/datasets/'
-nfs_dataset_path2 = '/nfs_dataset_path2/datasets/'
+nfs_dataset_path1 = '/nfs4-p1/ckx/datasets/'
+nfs_dataset_path2 = '/mnt/nfs4-p1/ckx/datasets/'
 
 
 def main(args):
@@ -41,6 +41,10 @@ def main(args):
                                 args=args)
     modelOptm.optimizing()
 
+    metric_list = ['train-loss','train-rocauc', 'valid-rocauc', 'test-rocauc']
+    print_best_log(args, eopch_slice=args.epoch_slice)
+
+    # plot_logs(args, metric_list)
 
     print('optmi')
 
@@ -51,14 +55,14 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     ## datasets path and name
     parser.add_argument("--dataset_path", type=str, default='datasets')
-    parser.add_argument("--dataset_name", type=str, default='ogbg-moltoxcast',
+    parser.add_argument("--dataset_name", type=str, default='ogbg-molhiv',
                         choices=['ogbg-moltoxcast', 'zinc','ogbg-molclintox', 'ogbg-ppa', 'ogbg-mollipo','ogbg-molhiv'])
     ## model parameters
     parser.add_argument("--model", type=str, default='GCN', choices=['GCN', 'GraphSage', 'GAT', 'GIN'])
     parser.add_argument("--device", type=int, default=0)  
     parser.add_argument("--num_layer", type=int, default=4)
     parser.add_argument("--embed_dim", type=int, default=128)
-    parser.add_argument("--norm_type", type=str, default='motifnorm')
+    parser.add_argument("--norm_type", type=str, default='supernorm')
     parser.add_argument("--norm_affine", type=bool, default=True)
     parser.add_argument("--activation", type=str, default='relu', choices=['relu', 'None'])
     parser.add_argument("--dropout", type=float, default=0.5)
