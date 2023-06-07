@@ -1,6 +1,6 @@
-# Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization" (KDD 2023)
+# Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization (KDD 2023)
 
-Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization.]((https://arxiv.org/abs/2211.12712){:target="_blank"})
+Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization.](https://arxiv.org/abs/2211.12712){:target="_blank"}
 If you find this repository helpful for your research, please kindly cite the following paper:
 ```
 @inproceedings{chen2023improving,
