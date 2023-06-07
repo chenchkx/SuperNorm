@@ -20,7 +20,7 @@ skip_type='None'
 # for norm_type in 'groupnorm' 'pairnorm';do
 for norm_type in 'groupnorm' 'pairnorm';do
 for dropout in 0.5;do
-for nlayer in $(seq 0 2 42);do
+for nlayer in $(seq 2 2 42);do
 for seed in 0 1 2 3 4 5 6 7 8 9;do
 
     python main_node.py \

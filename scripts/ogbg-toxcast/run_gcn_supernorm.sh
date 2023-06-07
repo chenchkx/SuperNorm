@@ -1,30 +1,29 @@
 #!/usr/bin/env bash
 set -e 
 
-dataset_name='cora'
-model='GraphSage'
+dataset_name='ogbg-moltoxcast'
+model='GCN'
 device=1
 nlayer=4
 embed_dim=128
-norm_type='batchnorm'
+norm_type='supernorm'
 activation='relu'
-dropout=0.0
+dropout=0.5
+pool_type='mean'
 epochs=450
-lr=1e-2
-lr_min=1e-6
-lr_patience=10
+batch_size=128
+lr=1e-3
+lr_min=1e-5
+lr_patience=15
 wd=0.0
 seed=0
-skip_type='None'
 
-# for norm_type in 'batchnorm' 'None';do
-for norm_type in 'batchnorm' 'None';do
-for dropout in 0.5;do
-for nlayer in $(seq 0 2 42);do
+for nlayer in 4 16 32;do
+for lr in 1e-3;do
+for wd in 0.0;do
 for seed in 0 1 2 3 4 5 6 7 8 9;do
 
-
-    python main_node.py \
+    python main_graph.py \
         --dataset_name $dataset_name \
         --model $model \
         --device $device \
@@ -33,15 +32,14 @@ for seed in 0 1 2 3 4 5 6 7 8 9;do
         --norm_type $norm_type \
         --activation $activation \
         --dropout $dropout \
-        --skip_type $skip_type \
+        --pool_type $pool_type \
         --epochs $epochs \
+        --batch_size $batch_size \
         --lr $lr \
         --lr_min $lr_min \
         --lr_patience $lr_patience \
         --weight_decay $wd\
-        --seed $seed\
-        --breakout\
-        --state_dict
+        --seed $seed
 
 done
 done

@@ -1,7 +1,8 @@
-# Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization (KDD 2023)
+# Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization (KDD'23)
 
-Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization.](https://arxiv.org/abs/2211.12712){:target="_blank"}
+Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization.](https://arxiv.org/abs/2211.12712)
 If you find this repository helpful for your research, please kindly cite the following paper:
+
 ```
 @inproceedings{chen2023improving,
   title={Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization},
@@ -10,7 +11,6 @@ If you find this repository helpful for your research, please kindly cite the fo
   year={2023}
 }
 ```
-
 
 ## 1. Environment Installation
 
@@ -26,6 +26,7 @@ pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geo
 ```
 
 ## 2. Usage
+
 ## 2.1 Experiment on ogbg-moltoxcast
 
 ### download dataset
@@ -48,7 +49,7 @@ python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'supernorm'
 python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'batchnorm'
 ```
 
-<!-- ## 2.2 Experiments for Graph Isomorphism Test
+## 2.2 Experiments for Graph Isomorphism Test
 
 Firstly, download dataset:
 
@@ -59,10 +60,10 @@ python download_dataset.py --dataset_name 'imdb-binary'
 Then, please find shell files in 'cripts/graph-imdb-sl',  and running
 
 ```
-sh scripts/graph-imdb-sl/run_gin_sl_motifnorm.sh
+sh scripts/graph-imdb-sl/run_gin_sl_supernorm.sh
 ```
 
-To reproduce the Figure 3 in the paper, please remove the warmup operation (i.e, delete --lr_warmup  in shell files.)
+To reproduce the Figure 3 in the paper, please remove the warmup operation (i.e, delete --lr_warmup in shell files.)
 
 ## 2.3 Experiments for Over-smoothing Issue
 
@@ -75,7 +76,7 @@ python download_dataset.py --dataset_name 'cora'
 Then, please find shell files in 'scripts/node-cora', and running
 
 ```
-sh scripts/node-cora/run_gcn_motifnorm.sh
+sh scripts/node-cora/run_gcn_supernorm.sh
 ```
 
 ## 2.3 Experiments on other datasets
@@ -92,9 +93,9 @@ sh scripts/node-cora/run_gcn_motifnorm.sh
    Then, please find shell files in 'scripts/ogbg-toxcast', and running
 
    ```
-   sh scripts/node-cora/run_gcn_motifnorm.sh
+   sh scripts/ogbg-toxcast/run_gcn_supernorm.sh
    ```
-2. Node-Level:
+<!-- 2. Node-Level:
 
    download citeseer:
 
@@ -118,4 +119,4 @@ sh scripts/node-cora/run_gcn_motifnorm.sh
    ```
    sh scripts/ogbl-collab/run_gcn_motifnorm.sh
    sh scripts/ogbl-collab/run_gcn_batchnorm.sh
-   ``` -->
+   ```  -->

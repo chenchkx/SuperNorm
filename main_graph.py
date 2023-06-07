@@ -55,7 +55,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     ## datasets path and name
     parser.add_argument("--dataset_path", type=str, default='datasets')
-    parser.add_argument("--dataset_name", type=str, default='ogbg-molhiv',
+    parser.add_argument("--dataset_name", type=str, default='ogbg-moltoxcast',
                         choices=['ogbg-moltoxcast', 'zinc','ogbg-molclintox', 'ogbg-ppa', 'ogbg-mollipo','ogbg-molhiv'])
     ## model parameters
     parser.add_argument("--model", type=str, default='GCN', choices=['GCN', 'GraphSage', 'GAT', 'GIN'])

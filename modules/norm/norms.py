@@ -3,7 +3,6 @@ import torch
 import torch.nn as nn
 from modules.norm.norm_node import *
 from modules.norm.norm_graph import *
-from modules.norm.motifnorm import MotifNorm
 from modules.norm.supernorm import SuperNorm
 
 class NormalizeGNN(nn.Module):
@@ -12,9 +11,8 @@ class NormalizeGNN(nn.Module):
 
         self.norm_type = norm_type
         self.norm = None
-        if norm_type == 'motifnorm':
-            self.norm = MotifNorm(embed_dim, affine=affine)
-        elif norm_type == 'batchnorm':
+        
+        if norm_type == 'batchnorm':
             self.norm = BatchNorm(embed_dim, affine=affine)
         elif norm_type == 'supernorm':
             self.norm = SuperNorm(embed_dim, affine=affine)
