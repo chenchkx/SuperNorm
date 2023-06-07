@@ -1,8 +1,17 @@
 # Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization" (KDD 2023)
 
-Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization (KDD 2023)](https://arxiv.org/abs/2305.19903,target="_blank").
+Official code for paper [[Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization (KDD 2023)](https://arxiv.org/abs/2305.19903){:target="_blank"}].  If you find this repository helpful for your research, kindly cite the following paper:
+```
+@inproceedings{chen2023improving,
+  title={Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization},
+  author={Chen, Kaixuan and Liu, Shunyu and Zhu, Tongtian and Qiao, Ji and Su, Yun and Tian, Yingjie and Zheng, Tongya and Zhang, Haofei and Feng, Zunlei and Ye, Jingwen and Song, Mingli},
+  booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)},
+  year={2023}
+}
+```
 
-## environment installation
+
+## 1. Environment Installation
 
 ```
 conda create -n torch python=3.9
@@ -15,31 +24,30 @@ pip install openpyxl
 pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.10.0+cu113.html
 ```
 
-## Simple Demo
+## 2. Usage
+## 2.1 Experiment on ogbg-moltoxcast
 
-download dataset
+### download dataset
 
 ```
 python download_dataset.py --dataset_name 'ogbg-moltoxcast'
 ```
 
-**please note that the motif-induced information is preprocessed in the dataset**
-
-run 4 layers GCN using motifnorm and batchnorm
+### run 4 layers GCN using supernorm and batchnorm
 
 ```
-python main_graph.py --model 'GCN' --num_layer 4 --norm_type 'motifnorm'
+python main_graph.py --model 'GCN' --num_layer 4 --norm_type 'supernorm'
 python main_graph.py --model 'GCN' --num_layer 4 --norm_type 'batchnorm'
 ```
 
-run 16 layers GCN using motifnorm and batchnorm
+### run 16 layers GCN using supernorm and batchnorm
 
 ```
-python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'motifnorm'
+python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'supernorm'
 python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'batchnorm'
 ```
 
-## Experiments for Graph Isomorphism Test
+<!-- ## 2.2 Experiments for Graph Isomorphism Test
 
 Firstly, download dataset:
 
@@ -55,7 +63,7 @@ sh scripts/graph-imdb-sl/run_gin_sl_motifnorm.sh
 
 To reproduce the Figure 3 in the paper, please remove the warmup operation (i.e, delete --lr_warmup  in shell files.)
 
-## Experiments for Over-smoothing Issue
+## 2.3 Experiments for Over-smoothing Issue
 
 Firstly, download dataset:
 
@@ -69,7 +77,7 @@ Then, please find shell files in 'scripts/node-cora', and running
 sh scripts/node-cora/run_gcn_motifnorm.sh
 ```
 
-## Experiments on other datasets
+## 2.3 Experiments on other datasets
 
 ### For example:
 
@@ -109,4 +117,4 @@ sh scripts/node-cora/run_gcn_motifnorm.sh
    ```
    sh scripts/ogbl-collab/run_gcn_motifnorm.sh
    sh scripts/ogbl-collab/run_gcn_batchnorm.sh
-   ```
+   ``` -->
