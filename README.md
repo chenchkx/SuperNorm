@@ -79,11 +79,11 @@ Then, please find shell files in 'scripts/node-cora', and running
 sh scripts/node-cora/run_gcn_supernorm.sh
 ```
 
-## 2.3 Experiments on other datasets
+## 2.4 Experiments on other datasets
 
-### For example:
+<!-- ### For example: -->
 
-1. Graph-Level:
+### 2.4.1 Graph-Level:
 
    download ogbg-moltoxcast:
 
