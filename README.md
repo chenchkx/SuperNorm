@@ -13,6 +13,7 @@ Official code for paper [Improving Expressivity of GNNs with Subgraph-specific F
 <li> alleviating over-smoothing issue while GNNs' layers going deeper.</li>
 </ul>
 
+**Contact:** Please feel free to contact via email (<chenkx@zju.edu.cn>) if you have any questions.
 
 **Citing this repository:** If you find this repository helpful for your research, please kindly cite the following paper:
 
@@ -24,7 +25,6 @@ Official code for paper [Improving Expressivity of GNNs with Subgraph-specific F
   year={2023}
 }
 ```
-**Contact:** Please feel free to contact via email (<chenkx@zju.edu.cn>) if you have any questions.
 
 ### 1. Environment Installation
 
