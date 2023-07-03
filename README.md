@@ -9,8 +9,8 @@
 ## Overview
 Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization](https://arxiv.org/abs/2211.12712), which proposes a dedicated plug-and-play normalization scheme to strengthen the representative capabilities of GNNs, that is:
 <ul>
-<li> extending GNNs to be at least as powerful as the 1-WL test in distinguishing non-isomorphism graphs.</li>
-<li> alleviating over-smoothing issue while GNNs' layers going deeper.</li>
+<li> <strong> extending GNNs to be at least as powerful as the 1-WL test in distinguishing non-isomorphism graphs. </strong></li>
+<li> <strong> alleviating over-smoothing issue while GNNs' layers going deeper. </strong></li>
 </ul>
 
 **Contact:** Please feel free to contact via email (<chenkx@zju.edu.cn>) if you have any questions.
@@ -34,8 +34,6 @@ conda activate torch
 conda install pytorch==1.10.0 torchvision cudatoolkit=11.3 -c pytorch
 pip install dgl-cu113==0.7.1 -f https://data.dgl.ai/wheels/repo.html
 pip install ogb
-pip install seaborn
-pip install openpyxl
 pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.10.0+cu113.html
 ```
 
