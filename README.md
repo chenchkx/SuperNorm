@@ -41,20 +41,20 @@ pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geo
 
 ### 2.1 quick start on ogbg-moltoxcast
 
-### download dataset
+#### download dataset
 
 ```
 python download_dataset.py --dataset_name 'ogbg-moltoxcast'
 ```
 
-### run 4 layers GCN using supernorm and batchnorm
+#### run 4 layers GCN using supernorm and batchnorm
 
 ```
 python main_graph.py --model 'GCN' --num_layer 4 --norm_type 'supernorm'
 python main_graph.py --model 'GCN' --num_layer 4 --norm_type 'batchnorm'
 ```
 
-### run 16 layers GCN using supernorm and batchnorm
+#### run 16 layers GCN using supernorm and batchnorm
 
 ```
 python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'supernorm'
@@ -95,7 +95,7 @@ sh scripts/node-cora/run_gcn_supernorm.sh
 
 <!-- ### For example: -->
 
-### 2.4.1 Graph-Level:
+#### 2.4.1 Graph-Level:
 
    download ogbg-moltoxcast:
 
@@ -109,7 +109,7 @@ sh scripts/node-cora/run_gcn_supernorm.sh
    sh scripts/ogbg-toxcast/run_gcn_supernorm.sh
 ```
 
-### 2.4.2 Node-Level:
+#### 2.4.2 Node-Level:
 
    download pumbed:
 
@@ -123,7 +123,7 @@ sh scripts/node-cora/run_gcn_supernorm.sh
    sh scripts/node-pubmed/run_gcn_supernorm.sh
 ```
 
-### 2.4.3 Link-Level:
+#### 2.4.3 Link-Level:
 
    download ogbl-collab:
 
