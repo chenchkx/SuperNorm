@@ -46,14 +46,12 @@ pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geo
 ```
 python download_dataset.py --dataset_name 'ogbg-moltoxcast'
 ```
-
 #### run 4 layers GCN using supernorm and batchnorm
 
 ```
 python main_graph.py --model 'GCN' --num_layer 4 --norm_type 'supernorm'
 python main_graph.py --model 'GCN' --num_layer 4 --norm_type 'batchnorm'
 ```
-
 #### run 16 layers GCN using supernorm and batchnorm
 
 ```
