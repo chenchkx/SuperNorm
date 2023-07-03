@@ -3,6 +3,7 @@
 # plot*
 datasets/ogb*
 __pycache__/
+__pycache__
 
 .vscode
 
