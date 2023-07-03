@@ -8,13 +8,13 @@
 </p>
 
 Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization](https://arxiv.org/abs/2211.12712), which proposes a dedicated plug-and-play normalization scheme to strengthen the representative capabilities of GNNs, that is:
-<ol> 
+<ol>
 <li> extending GNNs to be at least as powerful as the 1-WL test in distinguishing non-isomorphism graphs</li>
 <li> alleviating over-smoothing issue while GNNs' layers going deeper.</li>
-<ol> 
+</ol>
 
 
-## 1. Environment Installation
+### 1. Environment Installation
 
 ```
 conda create -n torch python=3.9
@@ -27,7 +27,7 @@ pip install openpyxl
 pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.10.0+cu113.html
 ```
 
-## 2. Usage
+### 2. Usage
 
 ### 2.1 quick start on ogbg-moltoxcast
 
@@ -128,7 +128,7 @@ sh scripts/node-cora/run_gcn_supernorm.sh
    sh scripts/ogbl-collab/run_gcn_batchnorm.sh
 ```
 
-## Citing this repository
+### Citing this repository
 
 If you find this repository helpful for your research, please kindly cite the following paper:
 
