@@ -50,11 +50,11 @@ if __name__=='__main__':
     parser.add_argument("--dataset_name", type=str, default='ogbl-collab')
 
     ## GNN Model parameters
-    parser.add_argument("--model", type=str, default='GraphSage', choices=['GCN', 'GraphSage'])
+    parser.add_argument("--model", type=str, default='GCN', choices=['GCN', 'GraphSage'])
     parser.add_argument("--device", type=int, default=0)  
     parser.add_argument("--num_layer", type=int, default=4)
     parser.add_argument("--embed_dim", type=int, default=128)
-    parser.add_argument("--norm_type", type=str, default='nodenorm-bn')
+    parser.add_argument("--norm_type", type=str, default='supernorm')
     parser.add_argument("--norm_affine", type=bool, default=True)
     parser.add_argument("--activation", type=str, default='relu', choices=['relu', 'None'])
     parser.add_argument("--dropout", type=float, default=0.0)

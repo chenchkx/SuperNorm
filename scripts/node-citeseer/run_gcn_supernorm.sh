@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e 
 
-dataset_name='pubmed'
-model='GraphSage'
-device=3
+dataset_name='citeseer'
+model='GCN'
+device=2
 nlayer=4
 embed_dim=128
-norm_type='nodenorm'
+norm_type='meannorm'
 activation='relu'
 dropout=0.0
 epochs=450
@@ -17,7 +17,7 @@ wd=0.0
 seed=0
 
 for nlayer in 32 16 4;do
-for norm_type in 'nodenorm';do
+for norm_type in 'supernorm';do
 for dropout in 0.5;do
 for seed in 0 1 2 3 4 5 6 7 8 9;do
 

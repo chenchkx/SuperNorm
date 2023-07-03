@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e 
 
-dataset_name='citeseer'
+dataset_name='pubmed'
 model='GCN'
-device=2
+device=1
 nlayer=4
 embed_dim=128
-norm_type='meannorm'
+norm_type='batchnorm'
 activation='relu'
 dropout=0.0
 epochs=450
@@ -17,7 +17,7 @@ wd=0.0
 seed=0
 
 for nlayer in 32 16 4;do
-for norm_type in 'motifnorm';do
+for norm_type in 'supernorm';do
 for dropout in 0.5;do
 for seed in 0 1 2 3 4 5 6 7 8 9;do
 

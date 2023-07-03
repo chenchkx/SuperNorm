@@ -1,18 +1,19 @@
 # Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization (KDD'23)
 
-Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization.](https://arxiv.org/abs/2211.12712)
-If you find this repository helpful for your research, please kindly cite the following paper:
+<p align="center">
+   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-1.10 %20%7C%201.12 %20%7C%202.0-673ab7.svg" alt="Tested PyTorch Versions"></a>
+   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-4caf50.svg" alt="License"></a>
+   <a href="https://arxiv.org/abs/2305.19903" target="_blank"><img src="https://img.shields.io/badge/arXiv-2301.12900-009688.svg" alt="arXiv"></a>
 
-```
-@inproceedings{chen2023improving,
-  title={Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization},
-  author={Chen, Kaixuan and Liu, Shunyu and Zhu, Tongtian and Qiao, Ji and Su, Yun and Tian, Yingjie and Zheng, Tongya and Zhang, Haofei and Feng, Zunlei and Ye, Jingwen and Song, Mingli},
-  booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)},
-  year={2023}
-}
-```
+</p>
 
-## 1. Environment Installation
+Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization](https://arxiv.org/abs/2211.12712), which proposes a dedicated plug-and-play normalization scheme to strengthen the representative capabilities of GNNs, that is:
+<ol> 
+<li> extending GNNs to be at least as powerful as the 1-WL test in distinguishing non-isomorphism graphs</li>
+<li> alleviating over-smoothing issue while GNNs' layers going deeper.</li>
+<ol> 
+
+### 1. Environment Installation
 
 ```
 conda create -n torch python=3.9
@@ -25,9 +26,9 @@ pip install openpyxl
 pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.10.0+cu113.html
 ```
 
-## 2. Usage
+### 2. Usage
 
-## 2.1 Experiment on ogbg-moltoxcast
+### 2.1 quick start on ogbg-moltoxcast
 
 ### download dataset
 
@@ -49,7 +50,7 @@ python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'supernorm'
 python main_graph.py --model 'GCN' --num_layer 16 --norm_type 'batchnorm'
 ```
 
-## 2.2 Experiments for Graph Isomorphism Test
+### 2.2 Experiments for Graph Isomorphism Test
 
 Firstly, download dataset:
 
@@ -65,7 +66,7 @@ sh scripts/graph-imdb-sl/run_gin_sl_supernorm.sh
 
 To reproduce the Figure 3 in the paper, please remove the warmup operation (i.e, delete --lr_warmup in shell files.)
 
-## 2.3 Experiments for Over-smoothing Issue
+### 2.3 Experiments for Over-smoothing Issue
 
 Firstly, download dataset:
 
@@ -79,7 +80,7 @@ Then, please find shell files in 'scripts/node-cora', and running
 sh scripts/node-cora/run_gcn_supernorm.sh
 ```
 
-## 2.4 Experiments on other datasets
+### 2.4 Experiments on other datasets
 
 <!-- ### For example: -->
 
@@ -87,36 +88,58 @@ sh scripts/node-cora/run_gcn_supernorm.sh
 
    download ogbg-moltoxcast:
 
-   ```
+```
    python download_dataset.py --dataset_name 'ogbg-moltoxcast'
-   ```
+```
+
    Then, please find shell files in 'scripts/ogbg-toxcast', and running
 
-   ```
+```
    sh scripts/ogbg-toxcast/run_gcn_supernorm.sh
-   ```
-<!-- 2. Node-Level:
+```
 
-   download citeseer:
+### 2.4.2 Node-Level:
 
-   ```
-   python download_dataset.py --dataset_name 'citeseer'
-   ```
-   Then, please find shell files in 'scripts/node-citeseer', and running
+   download pumbed:
 
-   ```
-   sh scripts/node-citeseer/run_gcn_motifnorm.sh
-   ```
-3. Link-Level:
+```
+   python download_dataset.py --dataset_name 'pubmed'
+```
+
+   Then, please find shell files in 'scripts/node-pubmed', and running
+
+```
+   sh scripts/node-pubmed/run_gcn_supernorm.sh
+```
+
+### 2.4.3 Link-Level:
 
    download ogbl-collab:
 
-   ```
+```
    python download_dataset.py --dataset_name 'ogbl-collab'
-   ```
+```
+
    Then, please find shell files in 'scripts/ogbl-collab', and running
 
-   ```
-   sh scripts/ogbl-collab/run_gcn_motifnorm.sh
+```
+   sh scripts/ogbl-collab/run_gcn_supernorm.sh
    sh scripts/ogbl-collab/run_gcn_batchnorm.sh
-   ```  -->
+```
+
+### Citing this repository
+
+If you find this repository helpful for your research, please kindly cite the following paper:
+
+```
+@inproceedings{chen2023improving,
+  title={Improving Expressivity of GNNs with Subgraph-specific Factor Embedded Normalization},
+  author={Chen, Kaixuan and Liu, Shunyu and Zhu, Tongtian and Qiao, Ji and Su, Yun and Tian, Yingjie and others},
+  booktitle={ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)},
+  year={2023}
+}
+```
+
+### Contact
+
+Please feel free to contact via email (<chenkx@zju.edu.cn>) if you have any questions.

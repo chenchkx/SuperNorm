@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e 
 
-dataset_name='citeseer'
-model='GraphSage'
+dataset_name='ogbl-collab'
+model='GCN'
 device=0
 nlayer=4
 embed_dim=128
-norm_type='batchnorm'
+norm_type='supernorm'
 activation='relu'
 dropout=0.0
 epochs=450
@@ -16,12 +16,12 @@ lr_patience=15
 wd=0.0
 seed=0
 
-for nlayer in 32 16 4;do
-for norm_type in 'batchnorm' 'None';do
-for dropout in 0.5;do
+for nlayer in 4 16 32;do
+for norm_type in 'supernorm';do
+for dropout in 0.0;do
 for seed in 0 1 2 3 4 5 6 7 8 9;do
 
-    python main_node.py \
+    python main_link.py \
         --dataset_name $dataset_name \
         --model $model \
         --device $device \

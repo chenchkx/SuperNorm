@@ -6,7 +6,7 @@ model='GCN'
 device=3
 nlayer=4
 embed_dim=128
-norm_type='motifnorm'
+norm_type='supernorm'
 activation='relu'
 dropout=0.0
 epochs=450
@@ -18,7 +18,7 @@ seed=0
 skip_type='None'
 
 for nlayer in 32 16 4;do
-for norm_type in 'motifnorm';do
+for norm_type in 'supernorm';do
 for dropout in 0.5;do
 for seed in 0 1 2 3 4 5 6 7 8 9;do
 
