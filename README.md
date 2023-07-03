@@ -13,7 +13,8 @@ Official code for paper [Improving Expressivity of GNNs with Subgraph-specific F
 <li> alleviating over-smoothing issue while GNNs' layers going deeper.</li>
 <ol> 
 
-### 1. Environment Installation
+
+## 1. Environment Installation
 
 ```
 conda create -n torch python=3.9
@@ -26,7 +27,7 @@ pip install openpyxl
 pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.10.0+cu113.html
 ```
 
-### 2. Usage
+## 2. Usage
 
 ### 2.1 quick start on ogbg-moltoxcast
 
@@ -127,7 +128,7 @@ sh scripts/node-cora/run_gcn_supernorm.sh
    sh scripts/ogbl-collab/run_gcn_batchnorm.sh
 ```
 
-### Citing this repository
+## Citing this repository
 
 If you find this repository helpful for your research, please kindly cite the following paper:
 
@@ -140,6 +141,6 @@ If you find this repository helpful for your research, please kindly cite the fo
 }
 ```
 
-### Contact
+## Contact
 
 Please feel free to contact via email (<chenkx@zju.edu.cn>) if you have any questions.
