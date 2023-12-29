@@ -7,7 +7,7 @@
 </p>
 
 ## Overview
-Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization](https://arxiv.org/abs/2211.12712), which proposes a dedicated plug-and-play normalization scheme to strengthen the representative capabilities of GNNs, that is:
+Official code for paper [Improving Expressivity of GNNs with Subgraph-specific Factor Embedde Normalization](https://arxiv.org/abs/2305.19903), which proposes a dedicated plug-and-play normalization scheme to strengthen the representative capabilities of GNNs, that is:
 <ul>
 <li> <strong> extending GNNs to be at least as powerful as the 1-WL test in distinguishing non-isomorphism graphs. </strong></li>
 <li> <strong> alleviating over-smoothing issue while GNNs' layers going deeper. </strong></li>
